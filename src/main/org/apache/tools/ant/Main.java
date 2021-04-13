@@ -306,6 +306,7 @@ public class Main implements AntMain {
      *
      * @since Ant 1.6
      */
+//    TODO: String Literals should be placed first in comparison
     private void processArgs(final String[] args) {
         String searchForThis = null;
         boolean searchForFile = false;
