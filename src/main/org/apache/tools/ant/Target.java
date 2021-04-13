@@ -424,6 +424,7 @@ public class Target implements TaskContainer {
      * @see #setIf(String)
      * @see #setUnless(String)
      */
+//    FIXME: Replace for loop by a foreach loop
     public void execute() throws BuildException {
         if (ifCondition != null && !ifCondition.eval()) {
             project.log(this, "Skipped because property '" + project.replaceProperties(ifString)
