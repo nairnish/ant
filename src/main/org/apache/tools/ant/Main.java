@@ -306,7 +306,6 @@ public class Main implements AntMain {
      *
      * @since Ant 1.6
      */
-//    TODO: String Literals should be placed first in comparison
     private void processArgs(final String[] args) {
         String searchForThis = null;
         boolean searchForFile = false;
@@ -323,23 +322,23 @@ public class Main implements AntMain {
         for (int i = 0; i < args.length; i++) {
             final String arg = args[i];
 
-            if (arg.equals("-help") || arg.equals("-h")) {
+            if ("-help".equals(arg) || "-h".equals(arg)) {
                 justPrintUsage = true;
-            } else if (arg.equals("-version")) {
+            } else if ("-version".equals(arg)) {
                 justPrintVersion = true;
-            } else if (arg.equals("-diagnostics")) {
+            } else if ("-diagnostics".equals(arg)) {
                 justPrintDiagnostics = true;
-            } else if (arg.equals("-quiet") || arg.equals("-q")) {
+            } else if ("-quiet".equals(arg) || arg.equals("-q")) {
                 msgOutputLevel = Project.MSG_WARN;
-            } else if (arg.equals("-verbose") || arg.equals("-v")) {
+            } else if ("-verbose".equals(arg) || "-v".equals(arg)) {
                 msgOutputLevel = Project.MSG_VERBOSE;
-            } else if (arg.equals("-debug") || arg.equals("-d")) {
+            } else if ("-debug".equals(arg) || "-d".equals(arg)) {
                 msgOutputLevel = Project.MSG_DEBUG;
-            } else if (arg.equals("-silent") || arg.equals("-S")) {
+            } else if ("-silent".equals(arg) || "-S".equals(arg)) {
                 silent = true;
-            } else if (arg.equals("-noinput")) {
+            } else if ("-noinput".equals(arg)) {
                 allowInput = false;
-            } else if (arg.equals("-logfile") || arg.equals("-l")) {
+            } else if ("-logfile".equals(arg) || "-l".equals(arg)) {
                 try {
                     final File logFile = new File(args[i + 1]);
                     i++;
@@ -358,23 +357,23 @@ public class Main implements AntMain {
                         + "using the -log argument";
                     throw new BuildException(msg);
                 }
-            } else if (arg.equals("-buildfile") || arg.equals("-file")
-                       || arg.equals("-f")) {
+            } else if ("-buildfile".equals(arg) || "-file".equals(arg)
+                       || "-f".equals(arg)) {
                 i = handleArgBuildFile(args, i);
-            } else if (arg.equals("-listener")) {
+            } else if ("-listener".equals(arg)) {
                 i = handleArgListener(args, i);
             } else if (arg.startsWith("-D")) {
                 i = handleArgDefine(args, i);
-            } else if (arg.equals("-logger")) {
+            } else if ("-logger".equals(arg)) {
                 i = handleArgLogger(args, i);
-            } else if (arg.equals("-inputhandler")) {
+            } else if ("-inputhandler".equals(arg)) {
                 i = handleArgInputHandler(args, i);
-            } else if (arg.equals("-emacs") || arg.equals("-e")) {
+            } else if ("-emacs".equals(arg) || "-e".equals(arg)) {
                 emacsMode = true;
-            } else if (arg.equals("-projecthelp") || arg.equals("-p")) {
+            } else if ("-projecthelp".equals(arg) || "-p".equals(arg)) {
                 // set the flag to display the targets and quit
                 projectHelp = true;
-            } else if (arg.equals("-find") || arg.equals("-s")) {
+            } else if ("-find".equals(arg) || "-s".equals(arg)) {
                 searchForFile = true;
                 // eat up next arg if present, default to build.xml
                 if (i < args.length - 1) {
@@ -382,9 +381,9 @@ public class Main implements AntMain {
                 }
             } else if (arg.startsWith("-propertyfile")) {
                 i = handleArgPropertyFile(args, i);
-            } else if (arg.equals("-k") || arg.equals("-keep-going")) {
+            } else if ("-k".equals(arg) || "-keep-going".equals(arg)) {
                 keepGoingMode = true;
-            } else if (arg.equals("-nice")) {
+            } else if ("-nice".equals(arg)) {
                 i = handleArgNice(args, i);
             } else if (LAUNCH_COMMANDS.contains(arg)) {
                 //catch script/ant mismatch with a meaningful message
@@ -395,7 +394,7 @@ public class Main implements AntMain {
                         + "\nThis can be caused by a version mismatch between "
                         + "the ant script/.bat file and Ant itself.";
                 throw new BuildException(msg);
-            } else if (arg.equals("-autoproxy")) {
+            } else if ("-autoproxy".equals(arg)) {
                 proxy = true;
             } else if (arg.startsWith("-")) {
                 boolean processed = false;
