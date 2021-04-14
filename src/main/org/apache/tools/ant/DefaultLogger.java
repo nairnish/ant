@@ -70,6 +70,7 @@ public class DefaultLogger implements BuildLogger {
     /**
      * Sole constructor.
      */
+//    FIXME: Remove this constructor, the compiler will generate default constructor
     public DefaultLogger() {
     }
 
