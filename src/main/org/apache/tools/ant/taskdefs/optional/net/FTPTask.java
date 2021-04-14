@@ -874,7 +874,6 @@ public class FTPTask extends Task implements FTPTaskConfig {
          *
          * @return the SYMBOL representing the given action.
          */
-//        TODO: Add default case to the switch statement
         public int getAction() {
             String actionL = getValue().toLowerCase(Locale.ENGLISH);
             switch (actionL) {
@@ -897,8 +896,9 @@ public class FTPTask extends Task implements FTPTaskConfig {
                 return RM_DIR;
             case "site":
                 return SITE_CMD;
+            default:
+                return SEND_FILES;
             }
-            return SEND_FILES;
         }
     }
 
