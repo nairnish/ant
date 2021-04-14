@@ -1218,6 +1218,7 @@ public class FTP extends Task implements FTPTaskConfig {
      * @return true if it is possible to cd to this directory
      * @since ant 1.6
      */
+//    TODO: Remove the unused method
     private boolean isFunctioningAsFile(FTPClient ftp, String dir, FTPFile file)
             throws FTPConnectionClosedException {
         return !file.isDirectory() && (file.isFile() || !isFunctioningAsDirectory(ftp, dir, file));
