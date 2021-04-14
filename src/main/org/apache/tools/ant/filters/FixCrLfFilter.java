@@ -516,6 +516,7 @@ public final class FixCrLfFilter extends BaseParamFilterReader implements Chaina
             return editsBlocked || super.editsBlocked();
         }
 
+//        FIXME: Replace switch with less than 3 branches with if-statement
         public int read() throws IOException {
             int thisChar = super.read();
             // Mask, block from being edited, all characters in constants.
