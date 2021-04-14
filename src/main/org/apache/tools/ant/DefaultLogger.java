@@ -67,12 +67,6 @@ public class DefaultLogger implements BuildLogger {
     // CheckStyle:VisibilityModifier ON
 
 
-    /**
-     * Sole constructor.
-     */
-//    FIXME: Remove this constructor, the compiler will generate default constructor
-    public DefaultLogger() {
-    }
 
     /**
      * Sets the highest level of message this logger should respond to.
