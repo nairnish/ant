@@ -1813,6 +1813,7 @@ public class Project implements ResourceFactory {
      *                           targets, or if a named target does not exist.
      * @since Ant 1.6.3
      */
+//    TODO: Replace == with .equals() for string comparison
     public final Vector<Target> topoSort(final String[] roots, final Hashtable<String, Target> targetTable,
                                  final boolean returnAll) throws BuildException {
         final Vector<Target> ret = new VectorSet<>();
