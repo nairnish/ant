@@ -1364,6 +1364,7 @@ public class DirectoryScanner
      * @return <code>true</code> when the name matches against at least one
      *         include pattern, or <code>false</code> otherwise.
      */
+//    FIXME: Use US Locale in the argument while calling String.toUpperCase()
     private boolean isIncluded(final TokenizedPath path) {
         ensureNonPatternSetsReady();
 
