@@ -1130,7 +1130,6 @@ public class ProjectHelper2 extends ProjectHelper {
          * @exception SAXParseException in case of error (not thrown in
          *                              this implementation)
          */
-//        TODO: Replace String.indexOf(String) with String.indexOf(char) for a single character
         @Override
         public void onStartElement(String uri, String tag, String qname, Attributes attrs,
                                    AntXMLContext context) throws SAXParseException {
@@ -1185,7 +1184,7 @@ public class ProjectHelper2 extends ProjectHelper {
                     || (ANT_CORE_URI.equals(attrUri)
                         && ANT_TYPE.equals(attrs.getLocalName(i)))) {
                     name = ANT_TYPE;
-                    int index = value.indexOf(":");
+                    int index = value.indexOf(':');
                     if (index >= 0) {
                         String prefix = value.substring(0, index);
                         String mappedUri = context.getPrefixMapping(prefix);
