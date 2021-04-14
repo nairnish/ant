@@ -1210,21 +1210,6 @@ public class FTP extends Task implements FTPTaskConfig {
     }
 
     /**
-     * check FTPFiles to check whether they function as directories too
-     * the FTPFile API seem to make directory and symbolic links incompatible
-     * we want to find out if we can cd to a symbolic link
-     * @param dir  the parent directory of the file to test
-     * @param file the file to test
-     * @return true if it is possible to cd to this directory
-     * @since ant 1.6
-     */
-//    TODO: Remove the unused method
-    private boolean isFunctioningAsFile(FTPClient ftp, String dir, FTPFile file)
-            throws FTPConnectionClosedException {
-        return !file.isDirectory() && (file.isFile() || !isFunctioningAsDirectory(ftp, dir, file));
-    }
-
-    /**
      * Sets the remote directory where files will be placed. This may be a
      * relative or absolute path, and must be in the path syntax expected by
      * the remote server. No correction of path syntax will be performed.
