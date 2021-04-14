@@ -1456,6 +1456,7 @@ public class AntClassLoader extends ClassLoader implements SubBuildListener, Clo
      *
      * @since Ant 1.6.2
      */
+//    BUG: Use .equals() to compare object references
     public void subBuildFinished(final BuildEvent event) {
         if (event.getProject() == project) {
             cleanup();
