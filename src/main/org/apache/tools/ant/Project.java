@@ -1813,7 +1813,6 @@ public class Project implements ResourceFactory {
      *                           targets, or if a named target does not exist.
      * @since Ant 1.6.3
      */
-//    TODO: Replace == with .equals() for string comparison
     public final Vector<Target> topoSort(final String[] roots, final Hashtable<String, Target> targetTable,
                                  final boolean returnAll) throws BuildException {
         final Vector<Target> ret = new VectorSet<>();
@@ -1832,7 +1831,7 @@ public class Project implements ResourceFactory {
             final String st = state.get(root);
             if (st == null) {
                 tsort(root, targetTable, state, visiting, ret);
-            } else if (st == VISITING) {
+            } else if (st.equals(VISITING)) {
                 throw new BuildException("Unexpected node in visiting state: "
                         + root);
             }
@@ -1847,7 +1846,7 @@ public class Project implements ResourceFactory {
             final String st = state.get(curTarget);
             if (st == null) {
                 tsort(curTarget, targetTable, state, visiting, complete);
-            } else if (st == VISITING) {
+            } else if (st.equals(VISITING)) {
                 throw new BuildException("Unexpected node in visiting state: "
                     + curTarget);
             }
